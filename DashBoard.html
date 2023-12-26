@@ -1,0 +1,328 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="TickTagGo">
+  <meta name="generator" content="TickTagGo">
+  <title>Dental System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+  <link rel="stylesheet" href="css/css.css">
+
+
+  <style>
+    .sideBar {
+      height: 100vh;
+      max-height: 100vh;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+  </style>
+</head>
+
+<body class="bg-body-tertiary" style="font-size: 90%;">
+  <div class="d-flex">
+    
+    <div class="d-flex flex-column flex-shrink-0 py-2 px-3 bg-white sideBar" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <span class="fs-4"><i class="fa-solid fa-tooth"></i> Dental System</span>
+      </a>
+      <hr>
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li>
+          <a href="dashboard.html" class="nav-link active">
+            <i class="fa-solid fa-gauge-high me-2"></i>
+            Dashboard
+          </a>
+        </li>
+        <li data-bind="click:GetPats()">
+          <a href="patients.html" class="nav-link link-body-emphasis">
+            <i class="fa-solid fa-user-injured me-2"></i>
+            Patients
+          </a>
+        </li>
+        <li>
+          <a href="appointment.html" class="nav-link link-body-emphasis">
+            <i class="fa-solid fa-calendar-check me-2"></i>
+            Appointments
+          </a>
+        </li>
+        <li>
+          <a href="payment.html" class="nav-link link-body-emphasis">
+            <i class="fa-solid fa-file-invoice-dollar me-2"></i>
+            Payment info
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-body-emphasis">
+            <i class="fa-solid fa-screwdriver-wrench me-2"></i>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link link-body-emphasis">
+            <i class="fa-solid fa-life-ring me-2"></i>
+            Help
+          </a>
+        </li>
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-user-doctor me-2"></i>
+          <strong>MWakil</strong>
+        </a>
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="login.html">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="flex-grow-1">
+        <div class="py-2 border-bottom mb-3">
+          <div class="d-flex flex-wrap justify-content-center align-items-center">
+            <button type="button" class="btn text-secondary" style="font-size: 12px;">
+              <i class="fa-solid fa-bars fa-2x"></i>
+            </button>
+            
+            <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
+              </div>
+            </form>
+    
+            <div class="text-end">
+              <button type="button" class="btn text-secondary position-relative" style="font-size: 12px;">
+                <i class="fa-solid fa-bell fa-2x" style="font-size: 1.5em;"></i>
+                <span class="position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
+                  <span class="visually-hidden">New alerts</span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row mb-3">
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0 small">Total all time</h5>
+                      <span class="h4 font-weight-bold mb-0">200</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                        <i class="fas fa-chart-bar"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0 small">New this month</h5>
+                      <span class="h4 font-weight-bold mb-0">244</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                        <i class="fas fa-chart-pie"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                    <span class="text-nowrap">Since last week</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0 small">Incomes</h5>
+                      <span class="h4 font-weight-bold mb-0">924</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-primary text-white rounded-circle shadow">
+                        <i class="fas fa-users"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                    <span class="text-nowrap">Since yesterday</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-6">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0 small">Outcomes</h5>
+                      <span class="h4 font-weight-bold mb-0">49,65%</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                        <i class="fas fa-percent"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="mt-3 mb-0 text-muted text-sm">
+                    <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                    <span class="text-nowrap">Since last month</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 py-1">
+              <div class="card">
+                  <div class="card-header">
+                    Appointment statistics
+                  </div>
+                  <div class="card-body">
+                      <canvas id="chBar"></canvas>
+                  </div>
+              </div>
+            </div>
+            <div class="col-md-6 py-1">
+              
+              <div class="card border-top-0">
+                  <div class="card-header p-0 border-top-0">
+                    <ul class="nav nav-tabs border-bottom-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Pending Appointments</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Completed Appointments</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <table class="table table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col">Time</th>
+                          <th scope="col">Patient</th>
+                          <th scope="col">Description</th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="table-danger align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr class="align-middle">
+                          <th scope="row">09:30 AM</th>
+                          <td>Fokan Alfolany</td>
+                          <td>Regular check-up after six monthes</td>
+                          <td class="text-end">
+                            <div class="btn-group" role="group" aria-label="Basic outlined example">
+                              <button type="button" class="btn btn-sm btn-outline-primary">Left</button>
+                              <button type="button" class="btn btn-sm btn-outline-success">Right</button>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+    <script src="js/script.js"></script>
+    
+</body>
+
+</html>

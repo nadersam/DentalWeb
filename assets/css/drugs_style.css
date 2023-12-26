@@ -1,0 +1,47 @@
+body {
+	line-height: inherit;
+}
+.searchDrugs {
+	background-color: #f7f7f7;
+}
+.searchDrugs .searchDrugs__label--bold,
+.selectPatient .selectPatient__label--bold {
+	color: #004996;
+	font-weight: 600;
+}
+
+.searchDrugs .list-group {
+	height: 78vh;
+	overflow: auto;
+}
+
+.searchDrugs .list-group .list-group-item {
+	padding: 4px 13px !important;
+}
+
+.searchDrugs,
+.selectPatient {
+	padding-top: 5px;
+}
+
+.selectPatient .input-group-append {
+	position: relative;
+}
+.selectPatient .disecharge {
+	margin-top: 36px;
+}
+.selectPatient .disecharge input {
+	transform: scale(1.2);
+}
+
+.selectPatient .deletItem i {
+	color: red;
+}
+.selectPatient .deletItem i:hover {
+	color: rgba(170, 0, 0, 0.678);
+}
+
+.dataItem {
+	border-top: 1px solid #4d83b7;
+	padding-top: 20px;
+}

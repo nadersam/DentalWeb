@@ -1,0 +1,54 @@
+.icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+.icon-shape {
+    display: inline-flex;
+    padding: 12px;
+    text-align: center;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-shape i {
+    font-size: 1.25rem;
+}
+
+hr {
+    margin: 0.8rem 0;
+}
+
+#hjsCalendar .justify-content-center.d-md-flex {
+    justify-content: unset !important;
+}
+
+#rightContent {
+    height: 530px !important;
+    max-height: unset !important;
+}
+
+.events {
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: unset !important;
+    padding-right: 8px;
+}
+
+.calendar, .left {
+    max-width: 100% !important;
+}
+
+.calendar .day:not(.prev-date,.nxt-date,.tillCurrentDate,.futureDays) {
+    border-radius: 0.5rem;
+}
+
+#today-date + div.text-center {
+    width: unset !important;
+}
+
+#today-date {
+    padding-top: 1.5rem!important;
+    padding-bottom: 1.5rem!important;
+}

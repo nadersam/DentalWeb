@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\DentalLowLevel\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\DentalLowLevel\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{6F3D333A-ADFD-40C7-AE36-D37DDF3C172B}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>DentalWeb</RootNamespace>
+    <AssemblyName>DentalWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DentalWeb.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>DentalWeb.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\DentalLowLevel\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Appointment.html" />
+    <Content Include="assets\apple-touch-icon.png" />
+    <Content Include="assets\css\all.min.css" />
+    <Content Include="assets\css\bg.gif" />
+    <Content Include="assets\css\bootstrap-dialog.min.css" />
+    <Content Include="assets\css\bootstrap-multiselect.css" />
+    <Content Include="assets\css\bootstrap-select.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\common.css" />
+    <Content Include="assets\css\daterangepicker-bs3.css" />
+    <Content Include="assets\css\daterangepicker.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\drugs_style.css" />
+    <Content Include="assets\css\easyTree.css" />
+    <Content Include="assets\css\font-awesome.css" />
+    <Content Include="assets\css\Fonts.css" />
+    <Content Include="assets\css\fonts\font\fontawesome-webfont.svg" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\css\fonts\icomoon.svg" />
+    <Content Include="assets\css\fonts\license.txt" />
+    <Content Include="assets\css\full_screen\css\climacons.css" />
+    <Content Include="assets\css\full_screen\css\component.css" />
+    <Content Include="assets\css\full_screen\css\component2.css" />
+    <Content Include="assets\css\full_screen\css\default.css" />
+    <Content Include="assets\css\icons.css" />
+    <Content Include="assets\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="assets\css\images\ui-icons_444444_256x240.png" />
+    <Content Include="assets\css\images\ui-icons_555555_256x240.png" />
+    <Content Include="assets\css\images\ui-icons_777777_256x240.png" />
+    <Content Include="assets\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\jquery-ui-1.10.4.custom.css" />
+    <Content Include="assets\css\jquery.multiselect.css" />
+    <Content Include="assets\css\kooltip.css" />
+    <Content Include="assets\css\Loader.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\main_style.css" />
+    <Content Include="assets\css\main_style_ar.css" />
+    <Content Include="assets\css\Parallax\grid.css" />
+    <Content Include="assets\css\Parallax\normalize.css" />
+    <Content Include="assets\css\Parallax\style.css" />
+    <Content Include="assets\css\soft_button.css" />
+    <Content Include="assets\css\spriteBAR.png" />
+    <Content Include="assets\css\SpriteNew.png" />
+    <Content Include="assets\css\SpriteNew1.png" />
+    <Content Include="assets\css\Spritesheet.png" />
+    <Content Include="assets\css\style4.css" />
+    <Content Include="assets\css\__MACOSX\._main_style.css" />
+    <Content Include="assets\daterangepicker.min.css" />
+    <Content Include="assets\daterangepicker.min.js" />
+    <Content Include="assets\favicon.ico" />
+    <Content Include="assets\fonts-master\apache\opensans\DESCRIPTION.en_us.html" />
+    <Content Include="assets\fonts-master\apache\opensans\LICENSE.txt" />
+    <Content Include="assets\fonts-master\apache\oswald\DESCRIPTION.en_us.html" />
+    <Content Include="assets\fonts-master\apache\oswald\FONTLOG.txt" />
+    <Content Include="assets\fonts-master\apache\oswald\OFL.txt" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\COPYRIGHT.txt" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\DESCRIPTION.en_us.html" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\LICENSE.txt" />
+    <Content Include="assets\fonts-master\apache\roboto\COPYRIGHT.txt" />
+    <Content Include="assets\fonts-master\apache\roboto\DESCRIPTION.en_us.html" />
+    <Content Include="assets\fonts-master\apache\roboto\LICENSE.txt" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\icons\disabled\accept_document.png" />
+    <Content Include="assets\icons\disabled\add.png" />
+    <Content Include="assets\icons\disabled\addB.png" />
+    <Content Include="assets\icons\disabled\Add_Ext_Orders.png" />
+    <Content Include="assets\icons\disabled\add_service.png" />
+    <Content Include="assets\icons\disabled\adjustment.png" />
+    <Content Include="assets\icons\disabled\barcode.png" />
+    <Content Include="assets\icons\disabled\beacon_light.png" />
+    <Content Include="assets\icons\disabled\bed.png" />
+    <Content Include="assets\icons\disabled\bold.png" />
+    <Content Include="assets\icons\disabled\box.png" />
+    <Content Include="assets\icons\disabled\building.png" />
+    <Content Include="assets\icons\disabled\bullet-orange.png" />
+    <Content Include="assets\icons\disabled\bullets.png" />
+    <Content Include="assets\icons\disabled\c.png" />
+    <Content Include="assets\icons\disabled\cancel.png" />
+    <Content Include="assets\icons\disabled\can_document.png" />
+    <Content Include="assets\icons\disabled\check_box_list.png" />
+    <Content Include="assets\icons\disabled\date.png" />
+    <Content Include="assets\icons\disabled\delete-page.png" />
+    <Content Include="assets\icons\disabled\delete-table.png" />
+    <Content Include="assets\icons\disabled\diskette.png" />
+    <Content Include="assets\icons\disabled\Dispense_and_Print.png" />
+    <Content Include="assets\icons\disabled\Dispense_Orders.png" />
+    <Content Include="assets\icons\disabled\Drugs_and_Consumables.png" />
+    <Content Include="assets\icons\disabled\exc.png" />
+    <Content Include="assets\icons\disabled\file_start_workflow.png" />
+    <Content Include="assets\icons\disabled\find.png" />
+    <Content Include="assets\icons\disabled\Gal03_034 - Copy.png" />
+    <Content Include="assets\icons\disabled\hide.png" />
+    <Content Include="assets\icons\disabled\holdorder.png" />
+    <Content Include="assets\icons\disabled\hospital.png" />
+    <Content Include="assets\icons\disabled\house.png" />
+    <Content Include="assets\icons\disabled\italic.png" />
+    <Content Include="assets\icons\disabled\link.png" />
+    <Content Include="assets\icons\disabled\meeting_workspace.png" />
+    <Content Include="assets\icons\disabled\Move_Orders.png" />
+    <Content Include="assets\icons\disabled\new-page.png" />
+    <Content Include="assets\icons\disabled\new-table.jpg" />
+    <Content Include="assets\icons\disabled\new-table.png" />
+    <Content Include="assets\icons\disabled\new.png" />
+    <Content Include="assets\icons\disabled\new_order.png" />
+    <Content Include="assets\icons\disabled\note_add.png" />
+    <Content Include="assets\icons\disabled\nurse.png" />
+    <Content Include="assets\icons\disabled\open-page.png" />
+    <Content Include="assets\icons\disabled\open-table.png" />
+    <Content Include="assets\icons\disabled\Outside_Purchase.png" />
+    <Content Include="assets\icons\disabled\patientEducation.png" />
+    <Content Include="assets\icons\disabled\pill.png" />
+    <Content Include="assets\icons\disabled\Prepare_Orders.png" />
+    <Content Include="assets\icons\disabled\print.png" />
+    <Content Include="assets\icons\disabled\printer.png" />
+    <Content Include="assets\icons\disabled\refresh.png" />
+    <Content Include="assets\icons\disabled\Release_Hold.png" />
+    <Content Include="assets\icons\disabled\repeat.png" />
+    <Content Include="assets\icons\disabled\reprint.png" />
+    <Content Include="assets\icons\disabled\run.png" />
+    <Content Include="assets\icons\disabled\save-page.png" />
+    <Content Include="assets\icons\disabled\save.png" />
+    <Content Include="assets\icons\disabled\SaveItem.png" />
+    <Content Include="assets\icons\disabled\script.png" />
+    <Content Include="assets\icons\disabled\search_accounts.png" />
+    <Content Include="assets\icons\disabled\show.png" />
+    <Content Include="assets\icons\disabled\stethoscope.png" />
+    <Content Include="assets\icons\disabled\tick.png" />
+    <Content Include="assets\icons\disabled\total.png" />
+    <Content Include="assets\icons\disabled\underline.png" />
+    <Content Include="assets\icons\disabled\View_Dispensing.png" />
+    <Content Include="assets\icons\disabled\web_sheet.png" />
+    <Content Include="assets\icons\disabled\x_ray.png" />
+    <Content Include="assets\icons\down.png" />
+    <Content Include="assets\icons\hot\accept_document.png" />
+    <Content Include="assets\icons\hot\add.png" />
+    <Content Include="assets\icons\hot\addB.png" />
+    <Content Include="assets\icons\hot\Add_Ext_Orders.png" />
+    <Content Include="assets\icons\hot\add_service.png" />
+    <Content Include="assets\icons\hot\adjustment.png" />
+    <Content Include="assets\icons\hot\barcode.png" />
+    <Content Include="assets\icons\hot\beacon_light.png" />
+    <Content Include="assets\icons\hot\bed.png" />
+    <Content Include="assets\icons\hot\bold.png" />
+    <Content Include="assets\icons\hot\box.png" />
+    <Content Include="assets\icons\hot\building.png" />
+    <Content Include="assets\icons\hot\bullet-orange.png" />
+    <Content Include="assets\icons\hot\bullets.png" />
+    <Content Include="assets\icons\hot\c.png" />
+    <Content Include="assets\icons\hot\cancel.png" />
+    <Content Include="assets\icons\hot\can_document.png" />
+    <Content Include="assets\icons\hot\check_box_list.png" />
+    <Content Include="assets\icons\hot\date.png" />
+    <Content Include="assets\icons\hot\delete-page.png" />
+    <Content Include="assets\icons\hot\delete-table.png" />
+    <Content Include="assets\icons\hot\diskette.png" />
+    <Content Include="assets\icons\hot\Dispense_and_Print.png" />
+    <Content Include="assets\icons\hot\Dispense_Orders.png" />
+    <Content Include="assets\icons\hot\Drugs_and_Consumables.png" />
+    <Content Include="assets\icons\hot\exc.png" />
+    <Content Include="assets\icons\hot\file_start_workflow.png" />
+    <Content Include="assets\icons\hot\find.png" />
+    <Content Include="assets\icons\hot\Gal03_034 - Copy.png" />
+    <Content Include="assets\icons\hot\hide.png" />
+    <Content Include="assets\icons\hot\holdorder.png" />
+    <Content Include="assets\icons\hot\hospital.png" />
+    <Content Include="assets\icons\hot\house.png" />
+    <Content Include="assets\icons\hot\italic.png" />
+    <Content Include="assets\icons\hot\link.png" />
+    <Content Include="assets\icons\hot\meeting_workspace.png" />
+    <Content Include="assets\icons\hot\Move_Orders.png" />
+    <Content Include="assets\icons\hot\new-page.png" />
+    <Content Include="assets\icons\hot\new-table.jpg" />
+    <Content Include="assets\icons\hot\new-table.png" />
+    <Content Include="assets\icons\hot\new.png" />
+    <Content Include="assets\icons\hot\new_order.png" />
+    <Content Include="assets\icons\hot\note_add.png" />
+    <Content Include="assets\icons\hot\nurse.png" />
+    <Content Include="assets\icons\hot\open-page.png" />
+    <Content Include="assets\icons\hot\open-table.png" />
+    <Content Include="assets\icons\hot\Outside_Purchase.png" />
+    <Content Include="assets\icons\hot\patientEducation.png" />
+    <Content Include="assets\icons\hot\pill.png" />
+    <Content Include="assets\icons\hot\Prepare_Orders.png" />
+    <Content Include="assets\icons\hot\print.png" />
+    <Content Include="assets\icons\hot\printer.png" />
+    <Content Include="assets\icons\hot\refresh.png" />
+    <Content Include="assets\icons\hot\Release_Hold.png" />
+    <Content Include="assets\icons\hot\repeat.png" />
+    <Content Include="assets\icons\hot\reprint.png" />
+    <Content Include="assets\icons\hot\run.png" />
+    <Content Include="assets\icons\hot\save-page.png" />
+    <Content Include="assets\icons\hot\save.png" />
+    <Content Include="assets\icons\hot\SaveItem.png" />
+    <Content Include="assets\icons\hot\script.png" />
+    <Content Include="assets\icons\hot\search_accounts.png" />
+    <Content Include="assets\icons\hot\show.png" />
+    <Content Include="assets\icons\hot\stethoscope.png" />
+    <Content Include="assets\icons\hot\tick.png" />
+    <Content Include="assets\icons\hot\total.png" />
+    <Content Include="assets\icons\hot\underline.png" />
+    <Content Include="assets\icons\hot\View_Dispensing.png" />
+    <Content Include="assets\icons\hot\web_sheet.png" />
+    <Content Include="assets\icons\hot\x_ray.png" />
+    <Content Include="assets\icons\normal\accept_document.png" />
+    <Content Include="assets\icons\normal\add.png" />
+    <Content Include="assets\icons\normal\addB.png" />
+    <Content Include="assets\icons\normal\Add_Ext_Orders.png" />
+    <Content Include="assets\icons\normal\add_service.png" />
+    <Content Include="assets\icons\normal\adjustment.png" />
+    <Content Include="assets\icons\normal\barcode.png" />
+    <Content Include="assets\icons\normal\beacon_light.png" />
+    <Content Include="assets\icons\normal\bed.png" />
+    <Content Include="assets\icons\normal\bold.png" />
+    <Content Include="assets\icons\normal\box.png" />
+    <Content Include="assets\icons\normal\building.png" />
+    <Content Include="assets\icons\normal\bullet-orange.png" />
+    <Content Include="assets\icons\normal\bullets.png" />
+    <Content Include="assets\icons\normal\c.png" />
+    <Content Include="assets\icons\normal\cancel.png" />
+    <Content Include="assets\icons\normal\can_document.png" />
+    <Content Include="assets\icons\normal\check_box_list.png" />
+    <Content Include="assets\icons\normal\Clinical.png" />
+    <Content Include="assets\icons\normal\date.png" />
+    <Content Include="assets\icons\normal\delete-page.png" />
+    <Content Include="assets\icons\normal\delete-table.png" />
+    <Content Include="assets\icons\normal\diskette.png" />
+    <Content Include="assets\icons\normal\Dispense_and_Print.png" />
+    <Content Include="assets\icons\normal\Dispense_Orders.png" />
+    <Content Include="assets\icons\normal\Drugs_and_Consumables.png" />
+    <Content Include="assets\icons\normal\exc.png" />
+    <Content Include="assets\icons\normal\file_start_workflow.png" />
+    <Content Include="assets\icons\normal\find.png" />
+    <Content Include="assets\icons\normal\hide.png" />
+    <Content Include="assets\icons\normal\holdorder.png" />
+    <Content Include="assets\icons\normal\hospital.png" />
+    <Content Include="assets\icons\normal\house.png" />
+    <Content Include="assets\icons\normal\italic.png" />
+    <Content Include="assets\icons\normal\link.png" />
+    <Content Include="assets\icons\normal\meeting_workspace.png" />
+    <Content Include="assets\icons\normal\Move_Orders.png" />
+    <Content Include="assets\icons\normal\new-page.png" />
+    <Content Include="assets\icons\normal\new-table.png" />
+    <Content Include="assets\icons\normal\new.png" />
+    <Content Include="assets\icons\normal\new_order.png" />
+    <Content Include="assets\icons\normal\note_add.png" />
+    <Content Include="assets\icons\normal\nurse.png" />
+    <Content Include="assets\icons\normal\open-page.png" />
+    <Content Include="assets\icons\normal\open-table.png" />
+    <Content Include="assets\icons\normal\Outside_Purchase.png" />
+    <Content Include="assets\icons\normal\patientEducation.png" />
+    <Content Include="assets\icons\normal\pill.png" />
+    <Content Include="assets\icons\normal\Prepare_Orders.png" />
+    <Content Include="assets\icons\normal\print.png" />
+    <Content Include="assets\icons\normal\printer.png" />
+    <Content Include="assets\icons\normal\refresh.png" />
+    <Content Include="assets\icons\normal\Release_Hold.png" />
+    <Content Include="assets\icons\normal\repeat.png" />
+    <Content Include="assets\icons\normal\reprint.png" />
+    <Content Include="assets\icons\normal\run.png" />
+    <Content Include="assets\icons\normal\save-page.png" />
+    <Content Include="assets\icons\normal\save.png" />
+    <Content Include="assets\icons\normal\SaveItem.png" />
+    <Content Include="assets\icons\normal\script.png" />
+    <Content Include="assets\icons\normal\search_accounts.png" />
+    <Content Include="assets\icons\normal\show.png" />
+    <Content Include="assets\icons\normal\stethoscope.png" />
+    <Content Include="assets\icons\normal\tick.png" />
+    <Content Include="assets\icons\normal\total.png" />
+    <Content Include="assets\icons\normal\underline.png" />
+    <Content Include="assets\icons\normal\View_Dispensing.png" />
+    <Content Include="assets\icons\normal\web_sheet.png" />
+    <Content Include="assets\icons\normal\x_ray.png" />
+    <Content Include="assets\icons\smallarrow.png" />
+    <Content Include="assets\icons\up.png" />
+    <Content Include="assets\images\add.png" />
+    <Content Include="assets\images\Adj.jpg" />
+    <Content Include="assets\images\ar.png" />
+    <Content Include="assets\images\bg.png" />
+    <Content Include="assets\images\calc.png" />
+    <Content Include="assets\images\calculator.png" />
+    <Content Include="assets\images\cancel.png" />
+    <Content Include="assets\images\cart_full.png" />
+    <Content Include="assets\images\cart_full2.png" />
+    <Content Include="assets\images\cash.png" />
+    <Content Include="assets\images\chosen\chosen-sprite%402x.png" />
+    <Content Include="assets\images\chosen\chosen-sprite.png" />
+    <Content Include="assets\images\cross.png" />
+    <Content Include="assets\images\datatables\sort_asc.png" />
+    <Content Include="assets\images\datatables\sort_asc_disabled.png" />
+    <Content Include="assets\images\datatables\sort_both.png" />
+    <Content Include="assets\images\datatables\sort_desc.png" />
+    <Content Include="assets\images\datatables\sort_desc_disabled.png" />
+    <Content Include="assets\images\diskette.png" />
+    <Content Include="assets\images\edit.ico" />
+    <Content Include="assets\images\eng.png" />
+    <Content Include="assets\images\file_start_workflow.png" />
+    <Content Include="assets\images\find.png" />
+    <Content Include="assets\images\grid_DominikKiss_SubtlePatterns.jpg" />
+    <Content Include="assets\images\hide.png" />
+    <Content Include="assets\images\Info.png" />
+    <Content Include="assets\images\lab-withtext-2.png" />
+    <Content Include="assets\images\lab-withtext-2222.png" />
+    <Content Include="assets\images\notes_pin.png" />
+    <Content Include="assets\images\notifications.ico" />
+    <Content Include="assets\images\notifications.jpg" />
+    <Content Include="assets\images\NotifyF.png" />
+    <Content Include="assets\images\NotifyN.png" />
+    <Content Include="assets\images\patientlist.png" />
+    <Content Include="assets\images\pencil.png" />
+    <Content Include="assets\images\pharm.png" />
+    <Content Include="assets\images\pill.png" />
+    <Content Include="assets\images\print.png" />
+    <Content Include="assets\images\reprint.png" />
+    <Content Include="assets\images\show.png" />
+    <Content Include="assets\images\spritemap%402x.png" />
+    <Content Include="assets\images\spritemap.png" />
+    <Content Include="assets\images\SpriteNew.png" />
+    <Content Include="assets\images\stars\0.png" />
+    <Content Include="assets\images\stars\1.png" />
+    <Content Include="assets\images\stars\2.png" />
+    <Content Include="assets\images\stars\3.png" />
+    <Content Include="assets\images\stars\4.png" />
+    <Content Include="assets\images\stars\5.png" />
+    <Content Include="assets\images\tick.png" />
+    <Content Include="assets\images\tog.png" />
+    <Content Include="assets\images\toggle.png" />
+    <Content Include="assets\images\total.png" />
+    <Content Include="assets\images\wasfati.png" />
+    <Content Include="assets\images\wasfaty.png" />
+    <Content Include="assets\images\wbg_03.png" />
+    <Content Include="assets\jquery.datetimepicker.css" />
+    <Content Include="assets\jquery.datetimepicker.js" />
+    <Content Include="assets\js\bootstrap-select.min.js" />
+    <Content Include="assets\js\c81813dd5f2238060c9ddecda9683907.js" />
+    <Content Include="assets\js\daterangepicker.js" />
+    <Content Include="assets\js\healthst.js" />
+    <Content Include="assets\js\hjsCalendar.min.js" />
+    <Content Include="assets\js\jquery-3.7.1.min.js" />
+    <Content Include="assets\js\jquery-ui.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\jquery.multiselect.js" />
+    <Content Include="assets\js\knockout-3.5.1.js" />
+    <Content Include="assets\js\main_js.js" />
+    <Content Include="assets\js\moment.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\ribbon\jquery.min.js" />
+    <Content Include="assets\ribbon\jquery.tooltip.min.js" />
+    <Content Include="assets\ribbon\ribbon-dark.css" />
+    <Content Include="assets\ribbon\ribbon.css" />
+    <Content Include="assets\ribbon\ribbon.js" />
+    <Content Include="assets\webfonts\fa-brands-400.svg" />
+    <Content Include="assets\webfonts\fa-regular-400.svg" />
+    <Content Include="assets\webfonts\fa-solid-900.svg" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.rtl.css" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.esm.js" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.esm.min.js" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.min.js" />
+    <Content Include="css\css.css" />
+    <Content Include="css\hjsCalendar.min.css" />
+    <Content Include="DashBoard.html" />
+    <Content Include="js\hjsCalendar.min.js" />
+    <Content Include="js\script.js" />
+    <Content Include="Login.html" />
+    <Content Include="Patients.html" />
+    <Content Include="Payment.html" />
+    <Content Include="placeholder.jpg" />
+    <Content Include="Scripts\MainScript.js" />
+    <Content Include="Scripts\toastr.min.css" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\.DS_Store" />
+    <Content Include="assets\css\fonts\font\fontawesome-webfont.eot" />
+    <Content Include="assets\css\fonts\font\fontawesome-webfont.ttf" />
+    <Content Include="assets\css\fonts\font\fontawesome-webfont.woff" />
+    <Content Include="assets\css\fonts\font\FontAwesome.otf" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\css\fonts\icomoon.eot" />
+    <Content Include="assets\css\fonts\icomoon.ttf" />
+    <Content Include="assets\css\fonts\icomoon.woff" />
+    <Content Include="assets\css\full_screen\css\.DS_Store" />
+    <Content Include="assets\fonts-master\apache\opensans\METADATA.pb" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-Bold.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-BoldItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-ExtraBold.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-ExtraBoldItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-Italic.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-Light.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-LightItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-Regular.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-Semibold.ttf" />
+    <Content Include="assets\fonts-master\apache\opensans\OpenSans-SemiboldItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\oswald\METADATA.pb" />
+    <Content Include="assets\fonts-master\apache\oswald\Oswald-Bold.ttf" />
+    <Content Include="assets\fonts-master\apache\oswald\Oswald-Light.ttf" />
+    <Content Include="assets\fonts-master\apache\oswald\Oswald-Regular.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\METADATA.pb" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-Bold.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-Italic.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-Light.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\robotocondensed\RobotoCondensed-Regular.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\METADATA.pb" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Black.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-BlackItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Bold.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-BoldItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Italic.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Light.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-LightItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Medium.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-MediumItalic.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Regular.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-Thin.ttf" />
+    <Content Include="assets\fonts-master\apache\roboto\Roboto-ThinItalic.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\icons\.DS_Store" />
+    <Content Include="assets\images\edit.zip" />
+    <Content Include="assets\web.config" />
+    <Content Include="assets\webfonts\fa-brands-400.eot" />
+    <Content Include="assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="assets\webfonts\fa-brands-400.woff" />
+    <Content Include="assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="assets\webfonts\fa-regular-400.eot" />
+    <Content Include="assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="assets\webfonts\fa-regular-400.woff" />
+    <Content Include="assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="assets\webfonts\fa-solid-900.eot" />
+    <Content Include="assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="assets\webfonts\fa-solid-900.woff" />
+    <Content Include="assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.rtl.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\css\bootstrap.rtl.min.css.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.esm.js.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.esm.min.js.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.js.map" />
+    <Content Include="bootstrap-5.0.2-dist\js\bootstrap.min.js.map" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50463</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:100/DentalWeb</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\DentalLowLevel\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\DentalLowLevel\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,301 @@
+﻿<!doctype html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="TickTagGo">
+    <meta name="generator" content="TickTagGo">
+    <title>Dental System</title>
+    <link href="bootstrap-5.0.2-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <link href="assets/css/Loader.css" rel="stylesheet" />
+    <link href="scripts/toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.css">
+
+
+    <style>
+
+        .sideBar {
+            height: 100vh;
+            max-height: 100vh;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+    </style>
+</head>
+
+<body class="bg-body-tertiary" style="font-size: 90%;">
+    <div class="d-flex">
+
+        <div class="d-flex flex-column flex-shrink-0 py-2 px-3 bg-white sideBar" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <span class="fs-4"><i class="fa-solid fa-tooth"></i> Dental System</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li>
+                    <a href="dashboard.html" class="nav-link link-body-emphasis">
+                        <i class="fa-solid fa-gauge-high me-2"></i>
+                        Dashboard
+                    </a>
+                </li>
+                <li data-bind="click:GetPats()">
+                    <a href="patients.html" class="nav-link  active">
+                        <i class="fa-solid fa-user-injured me-2"></i>
+                        Patients
+                    </a>
+                </li>
+                <li>
+                    <a href="appointment.html" class="nav-link link-body-emphasis">
+                        <i class="fa-solid fa-calendar-check me-2"></i>
+                        Appointments
+                    </a>
+                </li>
+                <li>
+                    <a href="payment.html" class="nav-link link-body-emphasis">
+                        <i class="fa-solid fa-file-invoice-dollar me-2"></i>
+                        Payment info
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-body-emphasis">
+                        <i class="fa-solid fa-screwdriver-wrench me-2"></i>
+                        Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="nav-link link-body-emphasis">
+                        <i class="fa-solid fa-life-ring me-2"></i>
+                        Help
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-user-doctor me-2"></i>
+                    <strong>MWakil</strong>
+                </a>
+                <ul class="dropdown-menu text-small shadow">
+                    <li><a class="dropdown-item" href="#">New project...</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="login.html">Sign out</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="flex-grow-1">
+                <div class="py-2 border-bottom mb-3">
+                    <div class="d-flex flex-wrap justify-content-center align-items-center">
+                        <button type="button" class="btn text-secondary" style="font-size: 12px;">
+                            <i class="fa-solid fa-bars fa-2x"></i>
+                        </button>
+
+                        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <span class="input-group-text" id="basic-addon2">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </span>
+                            </div>
+                        </form>
+
+                        <div class="text-end">
+                            <button type="button" class="btn text-secondary position-relative" style="font-size: 12px;">
+                                <i class="fa-solid fa-bell fa-2x" style="font-size: 1.5em;"></i>
+                                <span class="position-absolute translate-middle p-1 bg-danger border border-light rounded-circle">
+                                    <span class="visually-hidden">New alerts</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex mb-3">
+                        <button type="button" class="btn btn-outline-secondary btn-sm me-1" style="width: 140px;">
+                            Patients <span class="badge text-bg-secondary">32</span>
+                        </button>
+                        <div class="d-flex w-100 align-items-center mx-1">
+                            <input class="form-control form-control-sm" type="text" placeholder="Search patient" aria-label=".form-control-sm example">
+                            <i class="fa-solid fa-magnifying-glass" style="margin-left: -25px;"></i>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-outline-secondary dropdown-toggle btn-sm mx-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Last Appointment
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                        <button type="button" class="btn btn-outline-secondary ms-1 btn-sm" style="width: 90px;"><i class="fa-solid fa-sliders"></i> Filter</button>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+
+                            <div class="card">
+                                <!-- <div class="card-header">
+                                  Incomes
+                                </div> -->
+                                <div class="card-body">
+                                    <table class="table table-sm">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Age</th>
+                                                <th scope="col">Phone Number</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Last Appointment</th>
+                                                <th scope="col">Next Appointment</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody data-bind="foreach:Patients">
+                                            <tr class="align-middle">
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:LName" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:PatientKey" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:BirthDate" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:Phone" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:Email" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:BirthDate" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td style="border-right: 1px solid #e8e8e8;">
+                                                    <span class="id_patient" data-bind="text:BirthDate" style="margin-right:5px;"></span>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn btn-outline-primary btn-sm" data-bind="click:vm.LoadPatEdit">Details</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade " id="PatEditModal" style="z-index: 9999999999;">
+        <div class="modal-dialog modal-lg">
+            <form>
+                <div class="modal-content" id="mcontent">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" style="top:1px;border-style:solid;border:1px;padding:1px;">
+                        <div class="padded">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-info" role="alert">
+                                        <div class="form-group">
+                                            <label class="title_lable">Patient ID</label>
+                                            <b data-bind="text:SPatientID"></b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="title_lable">First Name</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control form-control-sm" data-bind="value:SLName1" />
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control form-control-sm" data-bind="value:SAName1" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="title_lable">Middle Name</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SLName2" />
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SAName2" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="title_lable">Last Name</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SLName3" />
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SAName3" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 title_lable">Phone</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SPhone" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 title_lable">Email</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SEmail" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 title_lable">Address</label>
+                                        <input style="width:68%; float: left;margin-left: 17px;" type="text" class="form-control input-sm" data-bind="value:SAddress" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 title_lable">Gender</label>
+                                        <select class="form-control input-sm" data-bind="options: Genders, optionsCaption:'Select Gender' ,optionsText: 'Description', optionsValue: 'Code', value: SGender"></select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 title_lable">Birth Date</label>
+                                        <input type="text" style="height: 33px;" placeholder="Birth date" class="form-control input-sm datepicker" id="BirthDateControl" autocomplete="off" data-bind="value:SBirthDate">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" style="text-align:center; margin-top: 0px;">
+                            <button type="button" class="btn btn-success btn-sm" data-bind="click:PatEditModalSubmit">Save</button>
+                            <button type="button" class="btn btn-danger btn-sm" data-bind="click:PatEditModalSubmit">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/jquery-ui.min.js"></script>
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/knockout-3.5.1.js"></script>
+    <script src="Scripts/MainScript.js"></script>
+    <script src="Scripts/toastr.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+</body>
+
+</html>
