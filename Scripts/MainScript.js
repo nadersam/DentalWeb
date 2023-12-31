@@ -1,4 +1,14 @@
-﻿$(document).ready(function () {
+﻿var CallAPI = 0;
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return undefined;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+$(document).ready(function () {
     vm = new MainViewModel();
     //$("#BirthDateControl").datepicker({ dateFormat: 'dd-mm-yy', changeYear: true });
     //$("#BirthDateControl").mask("99-99-9999");
@@ -8,6 +18,10 @@ var MainViewModel = function () {
     var self = this;
     self.UserName = ko.observable("");
     self.PassWord = ko.observable("");
+    self.CallAPI = getParameterByName('CallAPI');
+    if (self.CallAPI == null || self.CallAPI == undefined) {
+        self.CallAPI = 0;
+    } 
     self.ValidateLogin = function () {
         if (self.UserName() == "") {
             toastr.warning("Please enter a valid user name.");
@@ -54,21 +68,23 @@ var MainViewModel = function () {
         } else {
             pid = self.PatientID();
         }
-        $.ajax({
-            url: "/DentalAPI/api/Dental/GetPatsList?PatientID=" + pid + "&Name1=" + self.Name1() + "&Name2=" + self.Name2() + "&Name3=" + self.Name3() + "&Phone=" + self.Phone(),
-            type: "GET",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                var pats = ko.utils.arrayMap(data, function (item) {
-                    return new PatientEntity(item)
-                });
-                self.Patients(pats);
-            },
-            error: function (request) {
-                alert(request.responseText);
-            },
-        });
+        if (vm.CallAPI == 1) {
+            $.ajax({
+                url: "/DentalAPI/api/Dental/GetPatsList?PatientID=" + pid + "&Name1=" + self.Name1() + "&Name2=" + self.Name2() + "&Name3=" + self.Name3() + "&Phone=" + self.Phone(),
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    var pats = ko.utils.arrayMap(data, function (item) {
+                        return new PatientEntity(item)
+                    });
+                    self.Patients(pats);
+                },
+                error: function (request) {
+                    alert(request.responseText);
+                },
+            });
+        }
     }
     self.SPatientID = ko.observable("");
     self.SLName1 = ko.observable("");
@@ -84,29 +100,31 @@ var MainViewModel = function () {
     self.SGender = ko.observable("");
     self.LoadPatData = function (PatientID) {
         self.FillGenders();
-        $.ajax({
-            url: "/DentalAPI/api/Dental/LoadPatData?PatientID=" + PatientID,
-            type: "GET",
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                self.SPatientID(data[0].PatientKey);
-                self.SLName1(data[0].LName1);
-                self.SLName2(data[0].LName2);
-                self.SLName3(data[0].LName3);
-                self.SAName1(data[0].AName1);
-                self.SAName2(data[0].AName2);
-                self.SAName3(data[0].AName3);
-                self.SPhone(data[0].Phone);
-                self.SBirthDate(data[0].BirthDate);
-                self.SEmail(data[0].Email);
-                self.SAddress(data[0].Address);
-                self.SGender(data[0].Gender);
-            },
-            error: function (request) {
-                alert(request.responseText);
-            },
-        });
+        if (vm.CallAPI == 1) {
+            $.ajax({
+                url: "/DentalAPI/api/Dental/LoadPatData?PatientID=" + PatientID,
+                type: "GET",
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    self.SPatientID(data[0].PatientKey);
+                    self.SLName1(data[0].LName1);
+                    self.SLName2(data[0].LName2);
+                    self.SLName3(data[0].LName3);
+                    self.SAName1(data[0].AName1);
+                    self.SAName2(data[0].AName2);
+                    self.SAName3(data[0].AName3);
+                    self.SPhone(data[0].Phone);
+                    self.SBirthDate(data[0].BirthDate);
+                    self.SEmail(data[0].Email);
+                    self.SAddress(data[0].Address);
+                    self.SGender(data[0].Gender);
+                },
+                error: function (request) {
+                    alert(request.responseText);
+                },
+            });
+        }
     }
     self.LoadPatEdit = function (item) {
         self.LoadPatData(item.PatientKey());
